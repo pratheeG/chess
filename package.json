@@ -8,7 +8,7 @@
     "start": "npx tsx src/index.ts",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "test": "jest --coverage --coverageReporters"
+    "test": "jest --coverage"
   },
   "author": "Premkumar Manokaran",
   "license": "ISC",
