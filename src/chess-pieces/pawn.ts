@@ -8,7 +8,7 @@ export class Pawn extends ChessPiece {
         this.chessBoard = chessBoard;
     }
 
-    getMoves(position: string): string[] {
+    getMoves(position: string): string {
         const moves: string[] = [];
         const boardRows = this.chessBoard.rows;
         const boardCols = this.chessBoard.cols;
@@ -20,6 +20,6 @@ export class Pawn extends ChessPiece {
         if (this.chessBoard.isValidMove(colIdx, rowIdx + 1)) {
             moves.push(boardCols[colIdx] + boardRows[rowIdx + 1]);
         }
-        return moves;
+        return this.toString(moves);
     }
   }

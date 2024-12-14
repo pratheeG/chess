@@ -13,7 +13,7 @@ export class King extends ChessPiece {
         this.chessBoard = chessBoard;
     }
 
-    getMoves(position: string): string[] {
+    getMoves(position: string): string {
         const moves: string[] = [];
         const boardRows = this.chessBoard.rows;
         const boardCols = this.chessBoard.cols;
@@ -29,6 +29,6 @@ export class King extends ChessPiece {
                 moves.push(boardCols[newColIdx] + boardRows[newRowIdx]);
             }
         });
-        return moves;
+        return this.toString(moves);
     }
   }

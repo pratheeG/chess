@@ -13,7 +13,7 @@ export class Queen extends ChessPiece {
         this.chessBoard = chessBoard;
     }
 
-    getMoves(position: string): string[] {
+    getMoves(position: string): string {
         const moves: string[] = [];
         const boardRows = this.chessBoard.rows;
         const boardCols = this.chessBoard.cols;
@@ -35,6 +35,6 @@ export class Queen extends ChessPiece {
                 }
             }
         });
-        return moves;
+        return this.toString(moves);
     }
   }
