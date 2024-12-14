@@ -1,11 +1,17 @@
-import { Chess } from '.';
+import { Chess } from './chess';
 import { ChessBoard } from './chess-board';
 import { King } from './chess-pieces/king';
 import { Pawn } from './chess-pieces/pawn';
 import { Queen } from './chess-pieces/queen';
 
-describe('ChessBoard', () => {
-    const chess = new Chess(new ChessBoard());
+describe('Chess', () => {
+    let mockChessBoard: jest.Mocked<ChessBoard>;
+    let chess: Chess;
+    beforeEach(() => {
+        mockChessBoard = {} as unknown as jest.Mocked<ChessBoard>;
+
+        chess = new Chess(mockChessBoard);
+    });
     describe('getPiece', () => {
         it('Should get the chess piece - Pawn instance', () => {
             const chessPiece = chess.getPiece('Pawn')
