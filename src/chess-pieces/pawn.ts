@@ -14,6 +14,9 @@ export class Pawn extends ChessPiece {
         const boardCols = this.chessBoard.cols;
         const colIdx = boardCols.indexOf(position[0]);
         const rowIdx = boardRows.indexOf(position[1]);
+        if(!this.chessBoard.isValidPosition(position)) {
+            throw new Error('Not a valid position');
+        }
         if (this.chessBoard.isValidMove(colIdx, rowIdx + 1)) {
             moves.push(boardCols[colIdx] + boardRows[rowIdx + 1]);
         }

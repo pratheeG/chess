@@ -17,4 +17,12 @@ describe('Chess Piece - Pawn', () => {
         const moves = pawn.getMoves('A8');
         expect(moves).toEqual([]);
     });
+
+    it('Should throw error if the position is invalid', () => {
+        try {
+            pawn.getMoves('M8');
+        } catch (error) {
+            expect(error.message).toEqual('Not a valid position');
+        }
+    });
 });

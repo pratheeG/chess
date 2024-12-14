@@ -17,4 +17,11 @@ describe('Chess Piece - King', () => {
         const moves = king.getMoves('D4');
         expect(moves).toEqual(expect.arrayContaining(['C3', 'C4', 'C5', 'D3', 'D5', 'E3', 'E4','E5']));
     });
+    it('Should throw error if the position is invalid', () => {
+        try {
+            king.getMoves('M8');
+        } catch (error) {
+            expect(error.message).toEqual('Not a valid position');
+        }
+    });
 });

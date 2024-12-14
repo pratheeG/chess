@@ -2,6 +2,7 @@ import { Chess } from '.';
 import { ChessBoard } from './chess-board';
 import { King } from './chess-pieces/king';
 import { Pawn } from './chess-pieces/pawn';
+import { Queen } from './chess-pieces/queen';
 
 describe('ChessBoard', () => {
     const chess = new Chess(new ChessBoard());
@@ -16,6 +17,10 @@ describe('ChessBoard', () => {
             expect(chessPiece).toBeInstanceOf(King);
         })
 
+        it('Should get the chess piece - Queen instance', () => {
+            const chessPiece = chess.getPiece('Queen')
+            expect(chessPiece).toBeInstanceOf(Queen);
+        })
 
         it('Should throw error on passing the invalid peice', () => {
             try {

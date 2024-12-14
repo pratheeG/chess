@@ -27,4 +27,11 @@ describe('Chess Piece - King', () => {
             'G7', 'H8'
           ]));
     });
+    it('Should throw error if the position is invalid', () => {
+        try {
+            queen.getMoves('M8');
+        } catch (error) {
+            expect(error.message).toEqual('Not a valid position');
+        }
+    });
 });

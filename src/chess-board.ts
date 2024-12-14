@@ -10,4 +10,9 @@ export class ChessBoard {
     isValidMove(colIdx: number, rowIdx: number): boolean {
         return colIdx >= 0 && colIdx < 8 && rowIdx >= 0 && rowIdx < 8;
     }
+    isValidPosition(position: string) {
+        const colIdx = this.cols.indexOf(position[0]);
+        const rowIdx = this.rows.indexOf(position[1]);
+        return colIdx >= 0 && rowIdx >= 0;
+    }
 }

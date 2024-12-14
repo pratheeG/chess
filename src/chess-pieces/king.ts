@@ -17,6 +17,9 @@ export class King extends ChessPiece {
         const moves: string[] = [];
         const boardRows = this.chessBoard.rows;
         const boardCols = this.chessBoard.cols;
+        if(!this.chessBoard.isValidPosition(position)) {
+            throw new Error('Not a valid position');
+        }
         const colIdx = boardCols.indexOf(position[0]);
         const rowIdx = boardRows.indexOf(position[1]);
         this.directions.forEach(([row, col]) => {
