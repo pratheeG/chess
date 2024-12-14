@@ -1,5 +1,6 @@
 import { ChessBoard } from './chess-board';
 import { ChessPiece } from './chess-pieces/chess-piece';
+import { King } from './chess-pieces/king';
 import { Pawn } from './chess-pieces/pawn';
 
 
@@ -14,6 +15,9 @@ export class Chess {
             case 'pawn':
                 chessPiece = new Pawn(chessBoard);
                 break;
+            case 'king':
+                    chessPiece = new King(chessBoard);
+                    break;
             default:
                 throw new Error('Invalid chess piece');
         }

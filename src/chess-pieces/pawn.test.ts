@@ -1,7 +1,7 @@
 import { ChessBoard } from '../chess-board';
 import { Pawn } from './pawn';
 
-describe.only('Chess Piece - Pawn', () => {
+describe('Chess Piece - Pawn', () => {
     const pawn = new Pawn(new ChessBoard());
     it('Should get the moves of the Pawn for the position A1', () => {
         const moves = pawn.getMoves('A1');
